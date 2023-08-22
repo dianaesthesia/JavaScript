@@ -44,5 +44,5 @@ console.log(nameUser);
 let surnameUser = prompt('Enter your surname:');
 console.log(surnameUser);
 
-let age = prompt('Enter your age:');
+let age = +prompt('Enter your age:');
 console.log(age);
