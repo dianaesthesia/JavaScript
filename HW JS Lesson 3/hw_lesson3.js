@@ -34,10 +34,11 @@ let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'an
 //     let listOfItem = listOfItems[i];
 //     document.write(`<ul><li>${listOfItem}</li></ul>`);
 // }
+document.write(`<ul>`);
 for (let listOfItem of listOfItems) {
-    document.write(`<ul><li>${listOfItem}</li></ul>`);
+    document.write(`<li>${listOfItem}</li>`);
 }
-
+document.write(`</ul>`);
 /*-----------------------------------------Task6-------------------------------------------------------*/
 
 let products = [
