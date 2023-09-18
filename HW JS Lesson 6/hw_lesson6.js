@@ -26,13 +26,19 @@ console.log('JAVASCRIPT IS COOL'.toLowerCase());
 
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str1 = ' dirty string   '
-console.log(str1.replace(' ', '').replace('   ', ''));
+console.log(str1.trim());
+// console.log(str1.replace(' ', '').replace('   ', '')); /*нединамічний спосіб*/
 
-// let arrr= [1,2,3,4,5,6]
-// let ssplice=arrr.splice(0);
-// console.log(ssplice);
-// arrr.splice(0);
+
+// let arrr = [1, 2, 3, 4, 5, 6]
+// arrr.splice(0); /*повертає новий пустий вже вирізаний масив*/
 // console.log(arrr);
+
+// let arrr = [1, 2, 3, 4, 5, 6]
+// let ssplice = arrr.splice(0); /*нова змінна, для того, щоб отримати елементи, вирізані з масиву*/
+// console.log(ssplice);
+
+// =========================
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str2 = 'Ревуть воли як ясла повні';
@@ -144,7 +150,7 @@ let cardsArray = [
     {cardSuit: 'clubs', value: 'king', color: 'black'},
 ];
 // - знайти піковий туз
-let spadeAceCard = cardsArray.filter(card => card.cardSuit === 'spade' && card.value === 'ace');
+let spadeAceCard = cardsArray.find(card => card.cardSuit === 'spade' && card.value === 'ace');
 console.log(spadeAceCard);
 
 // - всі шістки
@@ -160,8 +166,12 @@ let allDiamondCards = cardsArray.filter(card => card.cardSuit === 'diamond');
 console.log(allDiamondCards);
 
 // - всі трефи від 9 та більше
-let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && card.value >= 9); /*не знаю як правильно вказати другу умову*/
+let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && card.value !== '9' && card.value !== '10' && card.value === 'ace' && card.value === 'jack' && card.value === 'queen' && card.value === 'king');
 console.log(clubsCards);
+
+
+// let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && card.value !== '6' && card.value !== '7' && card.value !== '8');
+// console.log(clubsCards);
 
 // =========================
 
