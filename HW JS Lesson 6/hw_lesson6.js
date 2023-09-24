@@ -290,18 +290,3 @@ console.log(saasFilter);
 // --написати пошук всіх об'єктів, в який в modules є docker
 let dockerFilter = coursesArray.filter(value => value.modules.includes('docker'));
 console.log(dockerFilter);
-
-class Userr {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-}
-
-class Customer extends Userr {
-
-    constructor(name, age, password) {
-        super(name, age);
-        this._password = password;
-    }
-}
