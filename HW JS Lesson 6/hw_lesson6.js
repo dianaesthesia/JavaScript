@@ -84,7 +84,7 @@ let coursesAndDurationArray = [
     {title: 'Frontend', monthDuration: 4}
 ];
 // -- відсортувати його за спаданням за monthDuration
-let sortCoursesAndDurationArray = coursesAndDurationArray.sort((m1, m2) => m2.monthDuration - m1.monthDuration);
+let sortCoursesAndDurationArray= coursesAndDurationArray.sort((m1, m2) => m2.monthDuration - m1.monthDuration);
 console.log(sortCoursesAndDurationArray);
 
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
@@ -103,6 +103,16 @@ let mapCoursesAndDurationArray = coursesAndDurationArray.map(value => {
     return value;
 });
 console.log(mapCoursesAndDurationArray);
+
+// або варіант2
+// let mapCoursesAndDurationArray = coursesAndDurationArray.map((value, index) => {
+//     return {
+//         id: index + 1,
+//         title: value.title,
+//         monthDuration: value.monthDuration
+//     }
+// });
+// console.log(mapCoursesAndDurationArray);
 
 // =========================
 //     описати колоду карт (від 6 до туза без джокерів)
@@ -147,7 +157,7 @@ let cardsArray = [
     {cardSuit: 'clubs', value: 'ace', color: 'black'},
     {cardSuit: 'clubs', value: 'jack', color: 'black'},
     {cardSuit: 'clubs', value: 'queen', color: 'black'},
-    {cardSuit: 'clubs', value: 'king', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'}
 ];
 // - знайти піковий туз
 let spadeAceCard = cardsArray.find(card => card.cardSuit === 'spade' && card.value === 'ace');
@@ -166,10 +176,14 @@ let allDiamondCards = cardsArray.filter(card => card.cardSuit === 'diamond');
 console.log(allDiamondCards);
 
 // - всі трефи від 9 та більше
-let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && card.value !== '9' && card.value !== '10' && card.value === 'ace' && card.value === 'jack' && card.value === 'queen' && card.value === 'king');
+let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && ['9', '10', 'ace', 'jack', 'queen', 'king'].includes(card.value));
 console.log(clubsCards);
 
+// або варіант 2:
+// let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && (card.value === '9' || card.value === '10' || card.value === 'ace' || card.value === 'jack' || card.value === 'queen' || card.value === 'king'));
+// console.log(clubsCards);
 
+// або варіант 3:
 // let clubsCards = cardsArray.filter(card => card.cardSuit === 'clubs' && card.value !== '6' && card.value !== '7' && card.value !== '8');
 // console.log(clubsCards);
 
@@ -197,8 +211,8 @@ let reduceCards = cardsArray.reduce((accumulator, card) => {
 
 }, {spades: [], diamonds: [], hearts: [], clubs: []});
 console.log(reduceCards);
-
 // =========================
+
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
 let coursesArray = [
     {
@@ -249,8 +263,8 @@ let coursesArray = [
         monthDuration: 7,
         hourDuration: 909,
         modules: ['html',
-            'css',
             'js',
+            'css',
             'mysql',
             'mongodb',
             'react',
@@ -276,3 +290,18 @@ console.log(saasFilter);
 // --написати пошук всіх об'єктів, в який в modules є docker
 let dockerFilter = coursesArray.filter(value => value.modules.includes('docker'));
 console.log(dockerFilter);
+
+class Userr {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class Customer extends Userr {
+
+    constructor(name, age, password) {
+        super(name, age);
+        this._password = password;
+    }
+}
