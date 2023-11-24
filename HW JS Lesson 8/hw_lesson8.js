@@ -140,7 +140,7 @@ class Car2 {
 
     changeYear2(newValue2) {
         this.year = newValue2;
-        return newValue2;
+        // return newValue2;
     }
 
     addDriver2(driver2) {
@@ -199,6 +199,7 @@ let Cinderellas = [
     new Cinderella('Yulia', 19, 36),
     new Cinderella('Ira', 18, 41)
 ];
+
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 class Prince extends Cinderella {
     constructor(name, age, shoesize) {
@@ -206,15 +207,30 @@ class Prince extends Cinderella {
         this.shoesize = shoesize;
     }
 }
+
 let prince = new Prince('Mykola', 28, 41);
 
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 for (const cinderella of Cinderellas) {
     if (cinderella.footsize === prince.shoesize) {
         console.log(cinderella);
+        break;
     }
 }
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
-let findCinderella = Cinderellas.find (value => value.footsize === 41);
+let findCinderella = Cinderellas.find(value => value.footsize === 41);
 console.log(findCinderella);
+
+
+
+// function asd ({b}) {
+//     console.log(b);
+// }
+//
+// let vasyl = {a: 'hello', b: 'world', name: 'di'};
+// asd(vasyl);
+//
+//
+// let [a, b, c] = [11, 22, 33];
+// console.log(a, c);
