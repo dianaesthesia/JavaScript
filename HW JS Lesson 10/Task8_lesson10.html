@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task8</title>
+</head>
+<body>
+<div id="currency">100 UAH</div>
+
+<script>
+    let currencyBlock = document.getElementById('currency');
+
+    let uahBlock = JSON.parse(localStorage.getItem('UAH')) || 100;
+
+    if (???) {
+        let increaseUahBlock = uahBlock + 10;
+        currencyBlock.innerText = `${increaseUahBlock} UAH`;
+        localStorage.setItem('UAH', JSON.stringify(increaseUahBlock));
+    }
+
+</script>
+</body>
+</html>

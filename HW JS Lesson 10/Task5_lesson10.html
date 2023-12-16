@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task5</title>
+</head>
+<body>
+<div id="text">Text</div>
+<button>Hide element</button>
+<script>
+    let textBlock = document.getElementById('text');
+    let hideElement = document.getElementsByTagName('button')[0];
+
+    let flag = false;
+    hideElement.onclick = function () {
+        if(!flag) {
+            textBlock.style.display = 'none';
+            flag = !flag;
+        } else {
+            textBlock.style.display = 'block';
+            flag = !flag;
+        }
+    }
+
+</script>
+</body>
+</html>

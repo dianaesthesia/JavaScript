@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task6</title>
+</head>
+<body>
+<form action="" name="f1">
+    <input type="number" name="age" placeholder="Age">
+    <button>Confirm age</button>
+</form>
+<script>
+    let form1 = document.forms.f1;
+    form1.onsubmit = function (e) {
+        e.preventDefault();
+        if (this.age.value < 18) {
+            alert ('Вам немає 18-ти років');
+        } else {
+            alert ('Вам більше 18');
+        }
+    }
+</script>
+</body>
+</html>

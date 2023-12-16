@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3 Sessions</title>
+</head>
+<body>
+<script>
+    let pageInfoSessions = JSON.parse(localStorage.getItem('sessions')) || [];
+    for (const session of pageInfoSessions) {
+        let dateBlock = document.createElement('div');
+        dateBlock.innerText = session;
+        document.body.appendChild(dateBlock);
+    }
+</script>
+</body>
+</html>

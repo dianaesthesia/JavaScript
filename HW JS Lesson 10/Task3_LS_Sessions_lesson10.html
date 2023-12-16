@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3 LS</title>
+</head>
+<body>
+<script>
+    let pageInfoSessions = JSON.parse(localStorage.getItem('sessions')) || [];
+    let date = new Date();
+    pageInfoSessions.push(date);
+    localStorage.setItem('sessions', JSON.stringify(pageInfoSessions));
+</script>
+</body>
+</html>

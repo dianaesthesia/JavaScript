@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task7</title>
+</head>
+<body>
+<form action="" name="table">
+    <input type="number" name="rows" placeholder="Rows">
+    <input type="number" name="columns" placeholder="Columns">
+    <input type="text" name="content" placeholder="Content">
+    <button>Create table</button>
+</form>
+<script>
+    let table = document.forms.table;
+    table.onsubmit = function (e) {
+        e.preventDefault();
+
+        let tableBlock = document.createElement('table');
+        document.body.appendChild(tableBlock);
+
+        let numberOfRows = this.rows.value;
+        let numberOfColumns = this.columns.value;
+
+        for (let i = 0; i < numberOfRows; i++) {
+            const trBlock = document.createElement('tr');
+            tableBlock.appendChild(trBlock);
+
+            for (let i = 0; i < numberOfColumns; i++) {
+                const tdBlock = document.createElement('td');
+                tdBlock.innerText = this.content.value;
+                trBlock.appendChild(tdBlock);
+            }
+        }
+    }
+</script>
+</body>
+</html>
